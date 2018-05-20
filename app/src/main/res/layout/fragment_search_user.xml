@@ -9,18 +9,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
         <EditText
-            android:layout_weight="0.6"
+            android:layout_weight="0.7"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="@string/text_carnet"/>
         <Button
-            android:layout_weight="0.4"
+            android:layout_weight="0.3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/text_buscar"
-            android:drawableStart="se"/>
+            android:drawableStart="@drawable/ic_search"
+            android:background="@android:color/transparent"
+            android:textColor="@color/colorPrimary"
+            android:drawableTint="@color/colorPrimary"
+            android:padding="4dp"/>
     </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_result_notas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
