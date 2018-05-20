@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">UserManager</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_nuevo_usuario">Nuevo usuario</string>
+    <string name="text_carnet">Carnet</string>
+    <string name="text_nota">Nota</string>
+    <string name="text_materia">Materia</string>
+    <string name="text_catedratico">Catedratico</string>
+    <string name="agregar">Agregar</string>
+    <string name="text_carnet_usuario">Carnet Usuario</string>
+    <string name="nombre_catedratico">Nombre Catedratico</string>
+    <string name="text_buscar">Buscar</string>
+</resources>
