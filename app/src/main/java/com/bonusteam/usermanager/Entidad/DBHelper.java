@@ -62,7 +62,7 @@ public class DBHelper extends SQLiteOpenHelper {
             flag=true;
         }catch (SQLException e){
             flag=false;
-            Toast.makeText(context,e.getMessage(),Toast.LENGTH_LONG);
+            Toast.makeText(context,e.getMessage(),Toast.LENGTH_LONG).show();
         }
         return flag;
     }
@@ -80,6 +80,35 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return usuario;
     }
+    public ArrayList<Usuario> getAllUser(){
+        Usuario usuario;
+        ArrayList<Usuario> usuarioList = new ArrayList<>();
+        String[] fields={CAMPO_CATEDRATICO,CAMPO_MATERIA,CAMPO_NOTA,CAMPO_CARNET};
+        try{
+            Cursor cursor = db.query(TABLA_USUARIO,fields,null,null,null,null,null);
+            while (cursor.moveToNext()){
+                usuario = new Usuario(cursor.getString(0),cursor.getString(2),cursor.getString(1),cursor.getString(3));
+                usuarioList.add(usuario);
+            }
+        }catch (Exception e){
+            usuario =null;
+        }
+        return  usuarioList;
+    }
 
-
+    public  boolean modfifyUser(Usuario usuario){
+        boolean flag;
+        try {
+            String[] params = {usuario.getCarnet()};
+            String[] fields = {CAMPO_NOTA};
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(CAMPO_NOTA, usuario.getNota());
+            db.update(TABLA_USUARIO, contentValues, CAMPO_CARNET + "=?", params);
+            flag = true;
+        }catch (SQLException e){
+            flag = false;
+            Toast.makeText(context,e.getMessage(),Toast.LENGTH_LONG).show();
+        }
+        return  flag;
+    }
 }
